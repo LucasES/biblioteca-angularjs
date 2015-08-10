@@ -1,0 +1,21 @@
+﻿<form>
+    <div class="form-group">
+        <label for="isbn">ISBN:</label>
+        <input type="text" class="form-control" id="isbn" placeholder="12345" ng-model="item.ISBN">
+    </div>
+    <div class="form-group">
+        <label for="nome">Nome:</label>
+        <input type="text" class="form-control" id="nome" placeholder="Assassin's Creed A Cruzada" ng-model="item.Name">
+    </div>
+    <div class="form-group">
+        <label for="preco">Preço:</label>
+        <input type="number" class="form-control" id="preco" ng-model="item.Price">
+    </div>
+    <div class="form-group">
+        <label for="quantidade">Quantidade:</label>
+        <input type="number" class="form-control" id="quantidade" ng-model="item.Quantity">
+    </div>
+
+    <button type="submit" class="btn bg-primary" ng-click="addItem(item)">Adicionar Livro</button>
+    <button class="btn btn-default" type="reset">Reset</button>  
+</form>
