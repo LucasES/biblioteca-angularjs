@@ -21,13 +21,13 @@
             <filtrar-livro class="col-md-4"></filtrar-livro>
             <dados-livros></dados-livros>
             <br />
-            <h2 class="text-center panel">Total: {{totalPrice()}}</h2>
+            <h2 class="text-center panel">Total: {{totalPrice() | currency}}</h2>
             <br />
             <div formulario-livro class="panel col-md-6">
             </div>
-            <!--<div gerar-json>
+            <div gerar-json>
 
-            </div>-->
+            </div>
         </div>
     </div>
     
@@ -36,6 +36,7 @@
     <script src="Scripts/angular.min.js"></script>
     <script src="Scripts/angular-route.min.js"></script>
     <script src="js/library-directives.js"></script>
+    <script src="Scripts/i18n/angular-locale_pt-br.js"></script>
     <script src="js/app.js" type="text/javascript"></script>
 </body>
 </html>
