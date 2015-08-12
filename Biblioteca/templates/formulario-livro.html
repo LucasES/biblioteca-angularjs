@@ -1,21 +1,26 @@
-﻿<form>
-    <div class="form-group">
+﻿<form name="bookForm" novalidate>
+    <div class="form-group" ng-class="{ 'has-error' : bookForm.ISBN.$invalid && !bookForm.ISBN.$pristine }">
         <label for="isbn">ISBN:</label>
-        <input type="text" class="form-control" id="isbn" placeholder="12345" ng-model="item.ISBN">
+        <input type="text" name="ISBN" class="form-control" id="isbn" placeholder="12345" ng-model="item.ISBN" required>
+        <p ng-show="bookForm.isbn.$invalid && !bookForm.isbn.$pristine" class="help-block">Campo Obrigatório</p>
     </div>
-    <div class="form-group">
+    <div class="form-group" ng-class="{ 'has-error' : bookForm.Name.$invalid && !bookForm.Name.$pristine }">
         <label for="nome">Nome:</label>
-        <input type="text" class="form-control" id="nome" placeholder="Assassin's Creed A Cruzada" ng-model="item.Name">
+        <input type="text" name="Name" class="form-control" id="nome" placeholder="Assassin's Creed A Cruzada" ng-model="item.Name" required>
     </div>
-    <div class="form-group">
+    <div class="form-group" ng-class="{ 'has-error' : bookForm.Price.$invalid && !bookForm.Price.$pristine }">
         <label for="preco">Preço:</label>
-        <input type="number" class="form-control" id="preco" ng-model="item.Price">
+        <input type="number" name="Price" class="form-control" id="preco" ng-model="item.Price" required>
     </div>
-    <div class="form-group">
+    <div class="form-group" ng-class="{ 'has-error' : bookForm.Quantity.$invalid && !bookForm.Quantity.$pristine }">
         <label for="quantidade">Quantidade:</label>
-        <input type="number" class="form-control" id="quantidade" ng-model="item.Quantity">
+        <input type="number" name="Quantity" class="form-control" id="quantidade" ng-model="item.Quantity" required>
     </div>
 
-    <button type="submit" class="btn bg-primary" ng-click="addItem(item)">Adicionar Livro</button>
+    <!--Deixar o botão desativado enquanto todos os campos requiridos não for preenchidos-->
+    <!--<button ng-disabled="bookForm.$invalid" type="submit" class="btn bg-primary" ng-click="addItem(item)">Adicionar Livro</button>-->
+
+    <botao-submit submit="addItem(item)"></botao-submit>
+
     <button class="btn btn-default" type="reset">Reset</button>  
 </form>
