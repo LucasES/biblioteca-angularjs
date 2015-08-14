@@ -1,18 +1,20 @@
-﻿<div >
-    <div class="container-fluid">
-        <br />
-        <br />
-        <h2 class="text-center panel">Livraria</h2>
-        <!--<p>Filtar: <input type="text" ng-model="filtro" /></p>-->
-        <filtrar-livro class="col-md-4"></filtrar-livro>
-        <dados-livros></dados-livros>
-        <br />
-        <h2 class="text-center panel">Total: {{totalPrice() | currency}}</h2>
-        <br />
-        <!--<div formulario-livro class="panel col-md-6">
-        </div>-->
-        <div gerar-json>
-
+﻿<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header text-center">
+                Listagem de Livros
+            </h1>
+            <ol class="breadcrumb">
+                <li class="active">Listar</li>
+            </ol>
         </div>
+    </div>
+    <filtrar-livro></filtrar-livro>
+    <dados-livros></dados-livros>
+    <br />
+    <div>
+        <h3 class="text-center panel">Total: {{totalPrice() | currency}}</h3>
+        <br />
+        <!--<div gerar-json></div>-->
     </div>
 </div>

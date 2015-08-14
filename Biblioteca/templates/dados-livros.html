@@ -1,45 +1,49 @@
-﻿<table border="1" class="table table-hover">
-    <thead>
-        <tr>
-            <th>ISBN</th>
-            <th>Nome</th>
-            <th>Preço</th>
-            <th>Quantidade</th>
-            <th>Preço Total</th>
-            <th>Ação</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr ng-repeat="item in items | filter: filtro">
-            <td>{{item.ISBN}}</td>
-            <td>
-                <span ng-hide="editMode">{{item.Name}}</span>
-                <input type="text" ng-show="editMode" ng-model="item.Name" />
-            </td>
-            <td>
-                <span ng-hide="editMode">{{item.Price}}</span>
-                <input type="number" ng-show="editMode" ng-model="item.Price" />
-            </td>
-            <td>
-                <span ng-hide="editMode">{{item.Quantity}}</span>
-                <input type="number" ng-show="editMode" ng-model="item.Quantity" />
-            </td>
-            <td>{{(item.Quantity) * (item.Price) | currency}}</td>
-            <td>
-                <span>
-                    <button class="btn btn-primary" type="submit" ng-hide="editMode" ng-click="editMode = true; editItem(item)">Edit</button>
-                </span>
-                <span>
-                    <button class="btn btn-success" type="submit" ng-show="editMode" ng-click="editMode = false">Save</button>
-                </span>
-                <span>
-                    <input class="btn btn-danger" type="button" value="Delete" ng-click="removeItem($index)" />
-                </span>
-            </td>
-        </tr>
-    </tbody>
-</table>
+﻿<div class="container">    
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>ISBN</th>
+                <th>Nome</th>
+                <th>Preço</th>
+                <th>Quantidade</th>
+                <th>Preço Total</th>
+                <th>Ação</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in items | filter: filtro">
+                <td>{{item.ISBN}}</td>
+                <td>
+                    <span ng-hide="editMode">{{item.Name}}</span>
+                    <input id="nome" type="text" ng-show="editMode" ng-model="item.Name" />
 
-<ul>
-    <li><a href="/#addLivro">Cadastrar Livro</a></li>
-</ul>
+                </td>
+                <td>
+                    <span ng-hide="editMode">{{item.Price}}</span>
+                    <input type="number" ng-show="editMode" ng-model="item.Price" />
+                </td>
+                <td>
+                    <span ng-hide="editMode">{{item.Quantity}}</span>
+                    <input type="number" ng-show="editMode" ng-model="item.Quantity" />
+                </td>
+                <td>{{(item.Quantity) * (item.Price) | currency}}</td>
+                <td>
+                    <span>
+                        <button class="btn btn-primary" type="submit" ng-hide="editMode" ng-click="editMode = true; editItem(index)">Edit</button>
+                    </span>
+                    <span>
+                        <button class="btn btn-success" type="submit" ng-show="editMode" ng-click="editMode = false">Save</button>
+                    </span>
+                    <span>
+                        <input class="btn btn-danger" type="button" value="Delete" ng-click="removeItem($index)" />
+                    </span>
+                </td>                
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li><a href="/#addLivro">Cadastrar Livro</a></li>
+    </ul>
+
+</div>

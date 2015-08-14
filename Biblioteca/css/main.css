@@ -1,0 +1,51 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+
+.footer-centralizado {
+    text-align: center;
+}
+
+.footer-centralizado .footer-companhia{
+	color:  #8d9093;
+	font-size: 24px;
+	margin: 0;
+}
+
+.footer-centralizado .footer-companhia-nome{
+	color:  #8f9296;
+	font-size: 14px;
+	padding-bottom:10px;
+}
+
+.footer-centralizado .footer-links{
+	list-style: none;
+	font-weight: bold;
+	color:  #ffffff;
+	padding: 20px 0 15px;
+	margin: 0;
+}
+
+.todoName{
+	font-size: 20px;
+	border-bottom: 1px lightgray solid;
+	padding-bottom:5px;
+}
+
+.edit-in-place span {
+  cursor: pointer;
+}
+
+.edit-in-place input {
+  display: none;
+}
+
+.edit-in-place.active span {
+  display: none;
+}
+
+.edit-in-place.active input {
+  display: inline-block;
+}
